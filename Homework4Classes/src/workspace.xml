@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workspace>
+    <objects>
+        <entry>
+            <key>byte1</key>
+            <value xsi:type="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <name>byte1</name>
+                <value xsi:type="xs:decimal" xmlns:xs="http://www.w3.org/2001/XMLSchema">100</value>
+            </value>
+        </entry>
+        <entry>
+            <key>int4</key>
+            <value xsi:type="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <name>int4</name>
+                <value xsi:type="xs:decimal" xmlns:xs="http://www.w3.org/2001/XMLSchema">227</value>
+            </value>
+        </entry>
+        <entry>
+            <key>int3</key>
+            <value xsi:type="plus" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <left xsi:type="reference">
+                    <refName>this.byte1</refName>
+                </left>
+                <right xsi:type="reference">
+                    <refName>this.byte2</refName>
+                </right>
+            </value>
+        </entry>
+        <entry>
+            <key>int6</key>
+            <value xsi:type="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <name>int6</name>
+                <value xsi:type="xs:decimal" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</value>
+            </value>
+        </entry>
+        <entry>
+            <key>byte2</key>
+            <value xsi:type="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <name>byte2</name>
+                <value xsi:type="xs:decimal" xmlns:xs="http://www.w3.org/2001/XMLSchema">127</value>
+            </value>
+        </entry>
+        <entry>
+            <key>int5</key>
+            <value xsi:type="plus" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <left xsi:type="reference">
+                    <refName>this.int3</refName>
+                </left>
+                <right xsi:type="reference">
+                    <refName>this.int4</refName>
+                </right>
+            </value>
+        </entry>
+        <entry>
+            <key>rule1</key>
+            <value xsi:type="rule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <name>rule1</name>
+                <enabled>true</enabled>
+                <mayCauseForwardChain>true</mayCauseForwardChain>
+                <condition xsi:type="lt">
+                    <left xsi:type="reference">
+                        <refName>this.int3</refName>
+                    </left>
+                    <right xsi:type="reference">
+                        <refName>this.int5</refName>
+                    </right>
+                </condition>
+                <conclusion xsi:type="setterConclusion">
+                    <target xsi:type="reference">
+                        <refName>this.int6</refName>
+                    </target>
+                    <value xsi:type="unnamedConstant">
+                        <value xsi:type="xs:decimal" xmlns:xs="http://www.w3.org/2001/XMLSchema">100</value>
+                    </value>
+                </conclusion>
+                <conditionalrefs/>
+                <conclusionrefs>
+                    <conclusionReferences>int6</conclusionReferences>
+                </conclusionrefs>
+            </value>
+        </entry>
+        <entry>
+            <key>rule2</key>
+            <value xsi:type="rule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <name>rule2</name>
+                <enabled>true</enabled>
+                <mayCauseForwardChain>true</mayCauseForwardChain>
+                <condition xsi:type="lt">
+                    <left xsi:type="reference">
+                        <refName>this.int6</refName>
+                    </left>
+                    <right xsi:type="unnamedConstant">
+                        <value xsi:type="xs:decimal" xmlns:xs="http://www.w3.org/2001/XMLSchema">1000</value>
+                    </right>
+                </condition>
+                <conclusion xsi:type="setterConclusion">
+                    <target xsi:type="reference">
+                        <refName>this.int6</refName>
+                    </target>
+                    <value xsi:type="plus">
+                        <left xsi:type="reference">
+                            <refName>this.int6</refName>
+                        </left>
+                        <right xsi:type="unnamedConstant">
+                            <value xsi:type="xs:decimal" xmlns:xs="http://www.w3.org/2001/XMLSchema">100</value>
+                        </right>
+                    </value>
+                </conclusion>
+                <conditionalrefs>
+                    <conditionReferences>int6</conditionReferences>
+                </conditionalrefs>
+                <conclusionrefs>
+                    <conclusionReferences>int6</conclusionReferences>
+                </conclusionrefs>
+            </value>
+        </entry>
+    </objects>
+</workspace>
